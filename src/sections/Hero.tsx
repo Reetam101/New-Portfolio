@@ -67,7 +67,7 @@ export const HeroSection = () => {
         </div>
         <div className="max-w-lg mx-auto">
           <h1 className="font-serif text-3xl text-center mt-8 tracking-wide md:text-5xl">
-            Crafting smart software solutions tailored to your needs.
+            Hi, I am Reetam Chatterjee.
           </h1>
           <p className="mt-4 text-center text-white/60 md:text-lg">
             I specialize in building scalable, high-performance web and mobile
