@@ -17,6 +17,8 @@ import GithubIcon from "@/assets/icons/github.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import NextjsIcon from "@/assets/icons/nextjs-fill-svgrepo-com.svg";
 import { TechIcon } from "@/components/TechIcon";
+import { CardHeader } from "@/components/CardHeader";
+import { ToolboxItems } from "@/components/ToolboxItems";
 
 const toolboxItems = [
   {
@@ -77,74 +79,104 @@ const hobbies = [
   {
     title: "Drawing",
     emoji: "🎨",
+    left: "5%",
+    top: "5%",
   },
   {
     title: "Photography",
     emoji: "📸",
+    left: "50%",
+    top: "5%",
   },
   {
     title: "Gym",
     emoji: "💪",
+    left: "10%",
+    top: "35%",
   },
   {
     title: "Coding",
     emoji: "👨‍💻",
+    left: "35%",
+    top: "40%",
   },
   {
     title: "Anime & Movies",
     emoji: "🎬",
+    left: "5%",
+    top: "65%",
   },
   {
     title: "Music",
-    emoji: "",
+    emoji: "🎶",
+    left: "45%",
+    top: "70%",
   },
 ];
 
 export const AboutSection = () => {
   return (
-    <div className="pb-96">
-      <SectionHeader
-        eyebrow="About Me"
-        title="A Glimpse Into My World"
-        description="Learn more about who I am, what I do and what inspires me."
-      />
-      <div>
-        <Card>
-          <div>
-            <StarIcon />
-            <h3>Movie Log</h3>
-            <p>Explore the movies shaping my perspectives.</p>
-          </div>
-          <Image src={movieImage} alt="poster" />
-        </Card>
-        <Card>
-          <div>
-            <StarIcon />
-            <h3>My Toolbox</h3>
-            <p>
-              Explore the technologies and tools I use to craft digital
-              experiences.
-            </p>
-          </div>
-          <div>
-            {toolboxItems.map((item) => (
-              <div key={item.title}>
-                <TechIcon component={item.iconType} />
-                <span>{item.title}</span>
+    <div className="py-20">
+      <div className="container">
+        <SectionHeader
+          eyebrow="About Me"
+          title="A Glimpse Into My World"
+          description="Learn more about who I am, what I do and what inspires me."
+        />
+        <div className="mt-20 flex flex-col gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid md:grid-cols-5 ">
+            <Card className="h-[320px] md:col-span-2">
+              <CardHeader
+                title={"Movie Log"}
+                description={"Explore the movies shaping my perspectives"}
+              />
+              <div className="w-40 mx-auto mt-2">
+                <Image src={movieImage} alt="poster" />
               </div>
-            ))}
+            </Card>
+            <Card className="h-[320px] col-span-3">
+              <CardHeader
+                title={"My Toolbox"}
+                description={
+                  "Explore the technologies and tools I use to craft digital experiences"
+                }
+                className=""
+              />
+              <ToolboxItems toolboxItems={toolboxItems} className="" />
+              <ToolboxItems
+                toolboxItems={toolboxItems}
+                className="mt-6"
+                itemsWrapperClassName="-translate-x-1/2"
+              />
+            </Card>
           </div>
-        </Card>
-        <Card>
-          <div>
-            <StarIcon />
-            <h3>Beyond the Code</h3>
-            <p>Explore my interests and hobbies beyond the digital realm.</p>
-          </div>
-        </Card>
-        {/* <Card>
-  
-        </Card> */}
+          <Card className="h-[320px] p-0 flex flex-col">
+            <CardHeader
+              title={"Beyond the Code"}
+              description={
+                "Explore my interests and hobbies beyond the digital realm."
+              }
+              className="px-6 py-6"
+            />
+            <div className="relative flex-1">
+              {hobbies.map((hobby) => (
+                <div
+                  key={hobby.title}
+                  className="absolute inline-flex gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5"
+                  style={{
+                    left: hobby.left,
+                    top: hobby.top,
+                  }}
+                >
+                  <span className="font-medium text-gray-950">
+                    {hobby.title}
+                  </span>
+                  <span>{hobby.emoji}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   );
