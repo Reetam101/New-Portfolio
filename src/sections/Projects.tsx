@@ -1,6 +1,6 @@
 import happsLandingPage from "@/assets/images/Happs.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import mypefectShotLandingPage from "@/assets/images/Myperfectshot.png";
+import indieSyncLandingPage from "@/assets/images/indieSyncPage.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -31,28 +31,40 @@ const portfolioProjects = [
     image: happsLandingPage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Fortmindz Private Ltd.",
+    year: "2024-2025",
+    title: "My Perfect Shot",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      {
+        title:
+          "Built a web application to for hiring photographers and their services.",
+      },
+      { title: "Implemented secure auth and payment flow using Stripe" },
+      { title: "Image secure storage using AWS S3 and watermark generation" },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    image: mypefectShotLandingPage,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "Fortmindz Private Ltd.",
+    year: "2024",
+    title: "Indie Sync",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title:
+          "Built a web application for Indie Music Artist to upload and sell license to their songs and tracks",
+      },
+      {
+        title:
+          "Implemented secure role based access control and user friendly UI",
+      },
+      {
+        title:
+          "Implemented secure payment using Stripe and advanced music player in React",
+      },
     ],
     link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    image: indieSyncLandingPage,
   },
 ];
 
