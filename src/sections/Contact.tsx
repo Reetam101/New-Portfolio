@@ -18,11 +18,15 @@ export const ContactSection = () => {
               </p>
             </div>
             <div>
-              <button
-                onClick={() => console.log("clicked")}
-                className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900"
-              >
-                <span className="font-semibold">Contact Me</span>
+              <button className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 z-50">
+                <span className="font-semibold">
+                  <a
+                    target="_blank"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScSnccUbJb9ScLzbYtIGCTYdDu4NDCMukRmyEy9us81qGD9Fg/viewform?usp=sharing&ouid=104538939487149940463"
+                  >
+                    Contact Me
+                  </a>
+                </span>
                 <ArrowUprightIcon className="size-4" />
               </button>
             </div>
