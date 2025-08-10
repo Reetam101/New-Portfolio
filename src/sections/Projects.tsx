@@ -1,6 +1,7 @@
 import happsLandingPage from "@/assets/images/Happs.png";
 import mypefectShotLandingPage from "@/assets/images/Myperfectshot.png";
 import indieSyncLandingPage from "@/assets/images/indieSyncPage.png";
+import resuflexLandingPage from "@/assets/images/screencapture-resu-flex-resume-builder-vercel-app-2025-08-10-01_52_30.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -10,21 +11,42 @@ import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
+    company: "Personal",
+    year: "2025",
+    title: "ResuFlex",
+    results: [
+      {
+        title:
+          "Developed a resume builder web app with customizable templates for quick and professional resume creation.",
+      },
+      {
+        title:
+          "Built using Next.js 15, Clerk authentication, and NeonDB for fast and scalable storage.",
+      },
+      {
+        title:
+          "Integrated Stripe for secure payments, supporting single-column and two-column modern resume layouts.",
+      },
+    ],
+    link: "https://resu-flex-resume-builder.vercel.app/",
+    image: resuflexLandingPage,
+  },
+  {
     company: "Fortmindz Private Ltd.",
     year: "2025",
     title: "Happs",
     results: [
       {
         title:
-          "Built a robust API to fetch event listings, handle ticket purchases, and manage user bookings.",
+          "Engineered an API to deliver event listings, handle ticket purchases, and manage user bookings efficiently.",
       },
       {
         title:
-          "Implemented real-time updates for booking confirmations and reminders.",
+          "Implemented real-time updates for instant booking confirmations and event reminders.",
       },
       {
         title:
-          "Role-based authentication for users, event organizers, and admins.",
+          "Designed role-based authentication for attendees, event organizers, and administrators.",
       },
     ],
     link: "https://happslive.com/",
@@ -37,12 +59,18 @@ const portfolioProjects = [
     results: [
       {
         title:
-          "Built a web application to for hiring photographers and their services.",
+          "Created a photography marketplace for booking professional photographers and services online.",
       },
-      { title: "Implemented secure auth and payment flow using Stripe" },
-      { title: "Image secure storage using AWS S3 and watermark generation" },
+      {
+        title:
+          "Integrated secure authentication and Stripe-powered payment processing.",
+      },
+      {
+        title:
+          "Used AWS S3 for image storage and automated watermarking for copyright protection.",
+      },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://myperfectshots.com/home",
     image: mypefectShotLandingPage,
   },
   {
@@ -52,25 +80,25 @@ const portfolioProjects = [
     results: [
       {
         title:
-          "Built a web application for Indie Music Artist to upload and sell license to their songs and tracks",
+          "Developed a music licensing platform for indie artists to upload and sell their tracks securely.",
       },
       {
         title:
-          "Implemented secure role based access control and user friendly UI",
+          "Implemented role-based access control with a clean and intuitive user interface.",
       },
       {
         title:
-          "Implemented secure payment using Stripe and advanced music player in React",
+          "Integrated Stripe payments and built an advanced React music player for smooth playback.",
       },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    link: "https://indiesync.io/",
     image: indieSyncLandingPage,
   },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <section className="pb-16 lg:py-24" id="projects">
       <div className="container">
         <SectionHeader
           eyebrow="Real-world Results"
@@ -78,10 +106,13 @@ export const ProjectsSection = () => {
           description="See how I transformed concepts into engaging software experiences."
         />
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project) => (
+          {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              style={{
+                top: `calc(64px + ${projectIndex * 40}px)`,
+              }}
             >
               <div
                 className="absolute inset-0 -z-10 opacity-5"
