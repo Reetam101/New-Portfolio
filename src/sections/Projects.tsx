@@ -2,6 +2,7 @@ import happsLandingPage from "@/assets/images/Happs.png";
 import mypefectShotLandingPage from "@/assets/images/Myperfectshot.png";
 import indieSyncLandingPage from "@/assets/images/indieSyncPage.png";
 import resuflexLandingPage from "@/assets/images/screencapture-resu-flex-resume-builder-vercel-app-2025-08-10-01_52_30.png";
+import chimeInPage from "@/assets/images/ChimeIn.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -10,6 +11,26 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
 const portfolioProjects = [
+  {
+    company: "Personal",
+    year: "2025",
+    title: "ChimeIn",
+    results: [
+      {
+        title:
+          "Developing a instagram like social media mobile app with user friend UI using React Native.",
+      },
+      {
+        title:
+          "Users have the ability to like, comment, follow, post, bookmark and share posts, they can see notifications.",
+      },
+      {
+        title: "Working currently on building a dedicated chat for the users.",
+      },
+    ],
+    link: "https://github.com/Reetam101/chimeIn-social",
+    image: chimeInPage,
+  },
   {
     company: "Personal",
     year: "2025",
