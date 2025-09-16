@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
     let tries = 0;
 
     const createObserver = () => {
-      const sections = document.querySelectorAll<HTMLElement>("section[id]");
+      const sections = document.querySelectorAll<HTMLElement>("[id]");
       if (!sections.length && tries < 10) {
         tries++;
         setTimeout(createObserver, 200);
@@ -33,12 +33,14 @@ export const Header: React.FC = () => {
       const options: IntersectionObserverInit = {
         root: null,
         rootMargin: `-${NAVBAR_HEIGHT}px 0px 0px 0px`,
-        threshold: 0.5,
+        threshold: 0.6,
       };
 
       observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+          console.log(entry);
           if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+            console.log(entry.target);
             setActive(entry.target.id);
           }
         });

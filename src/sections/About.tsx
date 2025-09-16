@@ -122,8 +122,8 @@ export const AboutSection = () => {
   const constraintRef = useRef(null);
 
   return (
-    <div className="py-20 lg:py-28" id="about">
-      <div className="container">
+    <div className="py-20 lg:py-28">
+      <div className="container" id="about">
         <SectionHeader
           eyebrow="About Me"
           title="A Glimpse Into My World"
