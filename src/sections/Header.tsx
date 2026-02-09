@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 type NavItem = {
   id: string;
@@ -73,16 +74,18 @@ export const Header: React.FC = () => {
             key={id}
             onClick={() => handleClick(id)}
             className={`px-4 py-2 rounded-full transition-colors duration-200 focus:outline-none
-              ${
-                active === id
-                  ? "bg-white text-gray-900"
-                  : "text-white hover:bg-white/20"
+              ${active === id
+                ? "bg-white text-gray-900"
+                : "text-gray-700 dark:text-white hover:bg-white/20"
               }`}
           >
             {label}
           </button>
         ))}
       </nav>
+      <div className="fixed top-3 right-3 z-50">
+        <ThemeToggle />
+      </div>
     </div>
   );
 };

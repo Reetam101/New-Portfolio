@@ -1,5 +1,8 @@
 import happsLandingPage from "@/assets/images/Happs.png";
 import mypefectShotLandingPage from "@/assets/images/Myperfectshot.png";
+import blueIrisScreenshot from "@/assets/images/blue_iris_screenshot.png";
+import allianceConnectivityScreenshot from "@/assets/images/alliance_screenshot.png"
+import chartComponentGeneratorScreenshot from "@/assets/images/Chartcomp1.png"
 import indieSyncLandingPage from "@/assets/images/indieSyncPage.png";
 import resuflexLandingPage from "@/assets/images/screencapture-resu-flex-resume-builder-vercel-app-2025-08-10-01_52_30.png";
 import chimeInPage from "@/assets/images/ChimeIn.png";
@@ -11,6 +14,57 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
 const portfolioProjects = [
+  {
+    company: "Personal",
+    year: "2026",
+    title: "React Chart Component Generator",
+    results: [
+      {
+        title: "Built a chart component generator for React, where users can come and paste their raw JSON data and turn into a beautiful chart component."
+      },
+      {
+        title: "Users can customize the chart component based on their and choose which library to use, for which they have to make an one time purchase."
+      },
+      {
+        title: "Includes payment using Razorpay. Built using Next.js, and Tailwindcss."
+      }
+    ],
+    link: "https://chart-component-code-generator-for.vercel.app/",
+    image: chartComponentGeneratorScreenshot
+  },
+  {
+    company: "Tedekstra",
+    year: "2026-Ongoing",
+    title: "Alliance Connectivity",
+    results: [
+      {
+        title: "Developing an end to end fully secure and advanced CRM for a company in the UK"
+      },
+      {
+        title: "It is a CRM for a company that deals with connectivity, networking and provide broadband and other networking services"
+      },
+    ],
+    link: "https://alliance.tedekstra.com/",
+    image: allianceConnectivityScreenshot
+  },
+  {
+    company: "Tedekstra",
+    year: "2025-Ongoing",
+    title: "Blue Iris Landscapes",
+    results: [
+      {
+        title: "Developed an end to end scalable CRM application for a landscaping business, which had three sub companies under it."
+      },
+      {
+        title: "Implemented proper role based authentication and views, job planner with google maps integration, sorting jobs based on farthest to closest route."
+      },
+      {
+        title: "Automated price calculation from excel formula and quote management with enhanced statistics dashboard."
+      }
+    ],
+    link: "https://planterra.tedekstra.com/sign-in",
+    image: blueIrisScreenshot
+  },
   {
     company: "Personal",
     year: "2025",
@@ -152,12 +206,12 @@ export const ProjectsSection = () => {
                   <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">
                     {project.title}
                   </h3>
-                  <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
+                  <hr className="border-t-2 border-gray-200 dark:border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result) => (
                       <li
                         key={result.title}
-                        className="flex md:text-base gap-2 text-sm text-white/50"
+                        className="flex md:text-base gap-2 text-sm text-gray-500 dark:text-white/50"
                       >
                         <CheckCircleIcon className="size-5 md:size-6" />
                         <span>{result.title}</span>
@@ -165,7 +219,7 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
                   <a href={project.link}>
-                    <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6">
+                    <button className="bg-gray-900 text-white dark:bg-white dark:text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6">
                       <span>Visit Live Site</span>
                       <ArrowUpRightIcon className="size-4" />
                     </button>
